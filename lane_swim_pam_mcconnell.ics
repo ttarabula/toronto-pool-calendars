@@ -24,7 +24,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:5a191d08-756b-5213-871d-548cd7e6196b
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260312T080000
 DTEND;TZID=America/Toronto:20260312T094500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -33,7 +33,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:ef11f7cc-ac28-5f2a-9689-d12ec40612a8
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260312T110000
 DTEND;TZID=America/Toronto:20260312T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -42,7 +42,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:a2760d8f-0e88-5de9-a6be-c62f053294c9
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260312T190000
 DTEND;TZID=America/Toronto:20260312T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -51,7 +51,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:8baeda1b-c394-555f-aad9-ff6a71d17243
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260313T070000
 DTEND;TZID=America/Toronto:20260313T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -59,17 +59,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:5aedadf2-275f-5e0d-91a3-3c74ceaa10a0
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260313T110000
-DTEND;TZID=America/Toronto:20260313T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:d333a61e-beaf-57eb-b223-b6e460b9e96f
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260313T120000
 DTEND;TZID=America/Toronto:20260313T140000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -78,7 +69,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:0d492f05-566c-5c7e-b843-a45423531b72
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260314T110000
 DTEND;TZID=America/Toronto:20260314T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -87,7 +78,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:12775566-d2fc-5abd-9a22-6b04aa9fcabb
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260315T110000
 DTEND;TZID=America/Toronto:20260315T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -96,7 +87,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:7d1a6dc5-d27a-5c9a-9d0a-38294c7ccd1c
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260316T070000
 DTEND;TZID=America/Toronto:20260316T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -104,26 +95,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:f410cf99-756c-544e-ac84-4b69a52ae42e
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260316T084500
-DTEND;TZID=America/Toronto:20260316T101500
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 7+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
-UID:db8a7c9f-5575-5c91-8d0c-d0b65d8d51bb
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260316T110000
-DTEND;TZID=America/Toronto:20260316T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:a8f29d04-4c6d-52cc-aa60-fb41fc247ed3
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260316T120000
 DTEND;TZID=America/Toronto:20260316T140000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -131,17 +104,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:6d05c21e-0548-5e88-b66d-fe27f5ba157b
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260316T201500
-DTEND;TZID=America/Toronto:20260316T211500
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 7+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:d391a423-dc91-5e1c-abbe-6baa813e0d43
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260317T080000
 DTEND;TZID=America/Toronto:20260317T103000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -150,7 +114,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:531ca22e-51cb-5ab6-9f64-155b86f1a579
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260318T070000
 DTEND;TZID=America/Toronto:20260318T084500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -158,17 +122,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:06258610-dcb4-5e28-95e2-6ec969cca9b5
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260318T103000
-DTEND;TZID=America/Toronto:20260318T113000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:aed8594c-a147-562b-8513-80f4b4a8f2ba
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260318T113000
 DTEND;TZID=America/Toronto:20260318T133000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -177,7 +132,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:78e6817d-8835-521a-bc58-5d6ef3ee0465
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260319T080000
 DTEND;TZID=America/Toronto:20260319T094500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -186,7 +141,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:38e3906b-0269-57cd-a74d-d3e213fcc6f5
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260319T110000
 DTEND;TZID=America/Toronto:20260319T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -195,7 +150,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:682bdf79-4ce2-501c-a511-c8cce89b173f
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260320T070000
 DTEND;TZID=America/Toronto:20260320T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -203,17 +158,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:127e6e9a-c56c-549f-9964-908504d58b59
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260320T110000
-DTEND;TZID=America/Toronto:20260320T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:486265a3-5ab9-55f0-a356-04098e8316ab
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260320T120000
 DTEND;TZID=America/Toronto:20260320T140000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -222,7 +168,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:7a1e5b5f-08b5-57d6-998b-2683ed2cb743
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260321T090000
 DTEND;TZID=America/Toronto:20260321T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -231,7 +177,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:a16cb6de-9404-5255-8c67-073ee65a7cf0
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260322T110000
 DTEND;TZID=America/Toronto:20260322T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -240,7 +186,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:b2f26382-e1fd-5bb2-b1e4-377ed898c4bb
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260407T080000
 DTEND;TZID=America/Toronto:20260407T084500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -249,7 +195,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:38ba49cd-7e5e-54e3-a6b9-6814f4b89e11
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260407T113000
 DTEND;TZID=America/Toronto:20260407T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -258,7 +204,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:dc861585-5442-52c1-8e03-d7a29941ca4d
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260407T183000
 DTEND;TZID=America/Toronto:20260407T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -267,7 +213,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:c38ebead-9a2f-547d-8cc3-4857df6fee59
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260408T070000
 DTEND;TZID=America/Toronto:20260408T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -275,17 +221,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:9f9afea6-faa5-5f3f-996a-114e3b8d98c3
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260408T103000
-DTEND;TZID=America/Toronto:20260408T113000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:b9eb69e1-036b-51d1-99b4-3b7312b3cc7e
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260408T113000
 DTEND;TZID=America/Toronto:20260408T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -294,7 +231,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:25f1ddb8-6f8b-55ce-aaf7-a3a40208d0fa
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260409T080000
 DTEND;TZID=America/Toronto:20260409T091500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -303,7 +240,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:5f471b38-4873-566b-9ea6-c52cd93958e3
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260409T110000
 DTEND;TZID=America/Toronto:20260409T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -312,7 +249,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:02b64982-e143-5fb8-bfde-e6edb0192391
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260409T183000
 DTEND;TZID=America/Toronto:20260409T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -321,7 +258,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:264a1ce0-7096-5c79-bfcf-f39fa091f760
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260410T070000
 DTEND;TZID=America/Toronto:20260410T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -329,17 +266,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:da22740b-8ec7-5538-9ee6-209348d86a5d
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260410T110000
-DTEND;TZID=America/Toronto:20260410T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:82c6f28a-091e-5a91-b638-47afe2307628
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260410T120000
 DTEND;TZID=America/Toronto:20260410T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -348,7 +276,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:da5271e9-0a4c-5896-a4dd-54ea0f1aaa25
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260411T110000
 DTEND;TZID=America/Toronto:20260411T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -357,7 +285,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:b2a45c47-7d71-5fbf-a143-8153f493db2b
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260412T110000
 DTEND;TZID=America/Toronto:20260412T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -366,7 +294,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:ad1fa2c3-8355-5496-a3c6-2fdad7f45a2f
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260413T070000
 DTEND;TZID=America/Toronto:20260413T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -374,26 +302,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:410357b2-b400-5762-847c-54d85efe0afc
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260413T084500
-DTEND;TZID=America/Toronto:20260413T101500
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 7+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
-UID:b02c2b31-98c5-5349-809e-1da76b924c86
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260413T110000
-DTEND;TZID=America/Toronto:20260413T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:b940747b-3be7-5a24-8938-8112b6e86d99
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260413T120000
 DTEND;TZID=America/Toronto:20260413T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -401,17 +311,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:d2199487-635e-59dc-928a-24beae0d173e
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260413T201500
-DTEND;TZID=America/Toronto:20260413T211500
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 7+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:656256e0-f3a7-5aea-b234-091a19a0e357
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260414T080000
 DTEND;TZID=America/Toronto:20260414T084500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -420,7 +321,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:5d065512-d189-5884-bd48-36d0881fd71a
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260414T113000
 DTEND;TZID=America/Toronto:20260414T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -429,7 +330,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:6ade629f-d37f-5931-9e7f-ac725fa0ab9f
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260414T183000
 DTEND;TZID=America/Toronto:20260414T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -438,7 +339,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:5dd62296-18b9-57b4-b110-c74280c8f3da
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260415T070000
 DTEND;TZID=America/Toronto:20260415T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -446,17 +347,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:6f3794ca-e2a1-553c-a019-554833077b92
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260415T103000
-DTEND;TZID=America/Toronto:20260415T113000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:23deebad-6a24-5cde-a667-97ce5af1af42
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260415T113000
 DTEND;TZID=America/Toronto:20260415T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -465,7 +357,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:d74b06ad-6c5d-5c20-8826-6fdce6a08df8
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260416T080000
 DTEND;TZID=America/Toronto:20260416T091500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -474,7 +366,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:85b8c763-fedf-5b16-80f8-d2228e684f4c
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260416T110000
 DTEND;TZID=America/Toronto:20260416T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -483,7 +375,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:c8af4d9a-c50b-51c8-8438-d9d890200d18
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260416T183000
 DTEND;TZID=America/Toronto:20260416T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -492,7 +384,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:5b614d0f-9231-5063-ad6a-9d24b20ec6ad
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260417T070000
 DTEND;TZID=America/Toronto:20260417T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -500,17 +392,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:a0388aac-92e8-51ad-b818-ce777b94ebda
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260417T110000
-DTEND;TZID=America/Toronto:20260417T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:a06681d4-2141-586a-90f5-fb555babae8d
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260417T120000
 DTEND;TZID=America/Toronto:20260417T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -519,7 +402,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:690cdb67-81d2-5b30-8fae-3f69e1c12bc9
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260418T110000
 DTEND;TZID=America/Toronto:20260418T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -528,7 +411,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:61722b38-8823-55e4-bcb8-33ba30396b97
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260419T110000
 DTEND;TZID=America/Toronto:20260419T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -537,7 +420,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:a150abc5-c808-54cf-a8d0-66aa66441d16
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260420T070000
 DTEND;TZID=America/Toronto:20260420T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -545,26 +428,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:ee5e9ab4-7cff-5875-a58a-1a2f5922a306
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260420T084500
-DTEND;TZID=America/Toronto:20260420T101500
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 7+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
-UID:ec26ee7e-3fa7-5612-8c57-fc98fd6c5ec3
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260420T110000
-DTEND;TZID=America/Toronto:20260420T120000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:e2757e97-ea66-551f-a8e3-6e443d9c5510
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260420T120000
 DTEND;TZID=America/Toronto:20260420T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -572,17 +437,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:a090ccbe-5673-5202-8a95-68c5b5423c1f
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260420T201500
-DTEND;TZID=America/Toronto:20260420T211500
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 7+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:7af96190-4e52-5c41-8c22-85008f766023
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260421T080000
 DTEND;TZID=America/Toronto:20260421T084500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -591,7 +447,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:6ff7535b-0f4e-5972-97ac-56660768aed8
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260421T113000
 DTEND;TZID=America/Toronto:20260421T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -600,7 +456,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:caa8f3db-16ba-5a71-9cb1-e058b56a1dbc
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260421T183000
 DTEND;TZID=America/Toronto:20260421T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -609,7 +465,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:145bd1ba-64b1-58b3-b642-95728ceea116
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260422T070000
 DTEND;TZID=America/Toronto:20260422T083000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -617,17 +473,8 @@ DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, 
 LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
-UID:dfe0969f-654f-5be7-9815-49b42f963eef
-DTSTAMP:20260312T222529Z
-DTSTART;TZID=America/Toronto:20260422T103000
-DTEND;TZID=America/Toronto:20260422T113000
-SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
-DESCRIPTION:Location: Pam McConnell Aquatic Centre\\nAddress: 640 Dundas St E\, Toronto\, ON M5A 2B8\\nAges 60+\\nFree drop-in swim.\\nhttps://www.toronto.ca/explore-enjoy/parks-recreation/places-spaces/parks-and-recreation-facilities/location/?id=2012
-LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
-END:VEVENT
-BEGIN:VEVENT
 UID:e71c468b-b113-5402-b741-8c231a62376a
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260422T113000
 DTEND;TZID=America/Toronto:20260422T130000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -636,7 +483,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:9b382080-d9fe-5030-a692-8a0e83ca4653
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260423T080000
 DTEND;TZID=America/Toronto:20260423T091500
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -645,7 +492,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:7fe3606d-21c2-5a89-b059-693d7315da92
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260423T110000
 DTEND;TZID=America/Toronto:20260423T123000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre
@@ -654,7 +501,7 @@ LOCATION:640 Dundas St E\, Toronto\, ON M5A 2B8
 END:VEVENT
 BEGIN:VEVENT
 UID:b60fcf12-f94e-55fa-b454-0388d700f17d
-DTSTAMP:20260312T222529Z
+DTSTAMP:20260312T223026Z
 DTSTART;TZID=America/Toronto:20260423T183000
 DTEND;TZID=America/Toronto:20260423T200000
 SUMMARY:Lane Swim – Pam McConnell Aquatic Centre

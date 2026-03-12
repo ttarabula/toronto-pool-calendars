@@ -36,7 +36,7 @@ def fetch_lane_swim_sessions():
     for row in reader:
         if row.get("Location ID") != LOCATION_ID:
             continue
-        if "lane swim" not in row.get("Course Title", "").lower():
+        if row.get("Course Title") != "Lane Swim":
             continue
         sessions.append(row)
 
