@@ -190,9 +190,12 @@ def main():
         (pool_dir / f"{slug}.ics").write_text(ics, encoding="utf-8")
 
         first = rows[0]
-        next_iso = (
-            f"{first['First Date']}T"
-            f"{int(first['Start Hour']):02d}:{int(first['Start Minute']):02d}"
+        next_dt = to_dt(first["First Date"], first["Start Hour"], first["Start Minute"])
+        hour12 = next_dt.hour % 12 or 12
+        ampm = "AM" if next_dt.hour < 12 else "PM"
+        next_label = (
+            f"{next_dt.strftime('%a %b')} {next_dt.day}, "
+            f"{hour12}:{next_dt.minute:02d} {ampm}"
         )
 
         pool = pools.setdefault(loc_id, {
@@ -207,7 +210,7 @@ def main():
             "slug": slug,
             "ics_path": f"pools/{loc_id}/{slug}.ics",
             "session_count": len(rows),
-            "next_session": next_iso,
+            "next_session": next_label,
         })
 
     pools_list = sorted(pools.values(), key=lambda p: p["name"])

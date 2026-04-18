@@ -5,10 +5,18 @@
 <title>Toronto Pool Calendars</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Subscribe to the drop-in swim schedule for any City of Toronto aquatic centre, updated daily from the city's open data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%8A%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Toronto Pool Calendars">
+<meta property="og:description" content="Subscribable calendar feeds for the free drop-in swim schedule at every City of Toronto aquatic centre.">
+<meta property="og:url" content="https://ttarabula.github.io/toronto-pool-calendars/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Toronto Pool Calendars">
+<meta name="twitter:description" content="Subscribable calendar feeds for the free drop-in swim schedule at every City of Toronto aquatic centre.">
 <style>
-  :root { color-scheme: light dark; --fg: #111; --muted: #666; --accent: #0066cc; --bg: #fff; --rule: #ddd; }
+  :root { color-scheme: light dark; --fg: #111; --muted: #666; --accent: #0066cc; --bg: #fff; --rule: #ddd; --input-bg: #fff; --input-border: #ccc; }
   @media (prefers-color-scheme: dark) {
-    :root { --fg: #eee; --muted: #999; --accent: #6aaeff; --bg: #0d1117; --rule: #30363d; }
+    :root { --fg: #eee; --muted: #999; --accent: #6aaeff; --bg: #0d1117; --rule: #30363d; --input-bg: #161b22; --input-border: #30363d; }
   }
   * { box-sizing: border-box; }
   body {
@@ -28,7 +36,8 @@
     display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.9rem;
   }
   .course { font-weight: 600; flex: 1 1 200px; }
-  .count { color: var(--muted); font-size: 0.88em; }
+  .next, .count { color: var(--muted); font-size: 0.88em; }
+  .next { flex-basis: 100%; margin-top: -0.15rem; }
   a { color: var(--accent); }
   .cta { white-space: nowrap; font-size: 0.92em; }
   footer {
@@ -37,13 +46,24 @@
     color: var(--muted); font-size: 0.85em;
   }
   #status { color: var(--muted); font-style: italic; }
+  #filter {
+    width: 100%; padding: 0.6rem 0.75rem; margin: 1rem 0 0.25rem;
+    font: inherit; color: var(--fg);
+    background: var(--input-bg);
+    border: 1px solid var(--input-border); border-radius: 6px;
+  }
+  #filter:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  #no-matches { color: var(--muted); font-style: italic; }
+  section[hidden] { display: none; }
 </style>
 </head>
 <body>
 <h1>Toronto Pool Calendars</h1>
 <p class="lede">Subscribe to the free drop-in swim schedule for any City of Toronto aquatic centre. Updated daily from the city's open data — no download, no account, no app.</p>
 <p class="lede" style="font-size: 0.9em;">Tap <strong>Subscribe</strong> on iOS/macOS to add to Apple Calendar, or <strong>Google</strong> to add to Google Calendar. The calendar keeps itself up to date as the city publishes new sessions.</p>
+<input id="filter" type="search" placeholder="Filter by pool name, address, or course…" aria-label="Filter calendars" autocomplete="off">
 <p id="updated" class="meta"></p>
+<p id="no-matches" hidden>No pools match your filter.</p>
 <div id="pools"><p id="status">Loading schedule…</p></div>
 <footer>
   <p>Schedule and facility data from the <a href="https://open.toronto.ca/">City of Toronto Open Data Portal</a>, used under the <a href="https://open.toronto.ca/open-data-license/">Open Government Licence – Toronto</a>. This site is not affiliated with the City of Toronto.</p>
@@ -52,6 +72,9 @@
 <script>
 (async () => {
   const statusEl = document.getElementById('status');
+  const filterInput = document.getElementById('filter');
+  const noMatches = document.getElementById('no-matches');
+
   try {
     const res = await fetch('pools.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -65,6 +88,8 @@
 
     for (const pool of data.pools) {
       const section = document.createElement('section');
+      const courseText = pool.calendars.map(c => c.course_title).join(' ');
+      section.dataset.search = `${pool.name} ${pool.address || ''} ${courseText}`.toLowerCase();
 
       const h2 = document.createElement('h2');
       if (pool.url) {
@@ -118,7 +143,11 @@
         dl.href = httpsUrl;
         dl.textContent = '.ics';
 
-        li.append(course, count, subscribe, gcal, dl);
+        const next = document.createElement('span');
+        next.className = 'next';
+        next.textContent = `next: ${cal.next_session}`;
+
+        li.append(course, count, subscribe, gcal, dl, next);
         ul.appendChild(li);
       }
       section.appendChild(ul);
@@ -129,6 +158,17 @@
     const when = new Date(data.generated_at).toLocaleString();
     document.getElementById('updated').textContent =
       `${data.pools.length} pools · ${total} calendars · updated ${when}`;
+
+    filterInput.addEventListener('input', () => {
+      const q = filterInput.value.trim().toLowerCase();
+      let visible = 0;
+      for (const section of container.querySelectorAll('section')) {
+        const match = !q || section.dataset.search.includes(q);
+        section.hidden = !match;
+        if (match) visible++;
+      }
+      noMatches.hidden = visible > 0;
+    });
   } catch (err) {
     statusEl.textContent = `Failed to load schedule: ${err.message}`;
   }
