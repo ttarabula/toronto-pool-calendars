@@ -2,7 +2,7 @@
 
 Subscribable calendar feeds for the free drop-in swim schedule at every City of Toronto aquatic centre, built from the city's open data.
 
-**Live site: https://ttarabula.github.io/toronto-pool-calendars/**
+**Live site: https://swimcal.ca/**
 
 Users subscribe with `webcal://` (Apple/iOS/Outlook) or the Google "add by URL" link. Their calendar app re-polls periodically, so new sessions the city publishes flow through automatically — no download, no account, no app.
 
