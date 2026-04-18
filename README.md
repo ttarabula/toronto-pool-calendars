@@ -28,3 +28,7 @@ Then open http://localhost:8000/.
 ## Data & attribution
 
 Schedule and facility data from the [City of Toronto Open Data Portal](https://open.toronto.ca/), used under the [Open Government Licence – Toronto](https://open.toronto.ca/open-data-license/). This project is not affiliated with the City of Toronto. The official [drop-in swim page](https://www.toronto.ca/data/parks/prd/swimming/dropin/) remains the authoritative source, especially around holidays, closures, and unplanned maintenance.
+
+## License
+
+Code is released under the [MIT License](LICENSE). Fork, adapt, run it for another city — the hard part here was identifying the two datasets and the join key; the rest is boilerplate.
