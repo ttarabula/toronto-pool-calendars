@@ -30,6 +30,8 @@ jobs:
       - name: Build calendars
         run: python3 build_calendars.py --output-dir public
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
