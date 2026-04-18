@@ -3,15 +3,20 @@
 
 import argparse
 import csv
+import html
 import io
 import json
 import re
 import sys
+import urllib.parse
 import urllib.request
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+SITE_URL = "https://swimcal.ca"
+TEMPLATES_DIR = Path(__file__).parent / "templates"
 
 DROP_IN_CSV_URL = (
     "https://ckan0.cf.opendata.inter.prod-toronto.ca"
@@ -234,7 +239,121 @@ def main():
         file=sys.stderr,
     )
 
+    render_site(out, pools_list, manifest["generated_at"], total_cals)
     sanity_check(pools_list, total_cals)
+
+
+def _render(template_name, **subs):
+    tmpl = (TEMPLATES_DIR / template_name).read_text(encoding="utf-8")
+    for k, v in subs.items():
+        tmpl = tmpl.replace(f"<!-- {{{{{k}}}}} -->", v)
+    return tmpl
+
+
+def _calendar_li(cal, pool_id, ics_href):
+    course = html.escape(cal["course_title"])
+    slug = cal["slug"]
+    https_url = f"{SITE_URL}/pools/{pool_id}/{slug}.ics"
+    webcal_url = https_url.replace("https:", "webcal:", 1)
+    gcal_url = (
+        "https://calendar.google.com/calendar/r?cid="
+        + urllib.parse.quote(https_url, safe="")
+    )
+    return (
+        "<li>"
+        f'<span class="course">{course}</span>'
+        f'<span class="count">{cal["session_count"]} upcoming</span>'
+        f'<a class="cta" href="{html.escape(webcal_url)}">Subscribe</a>'
+        f'<a class="cta" href="{html.escape(gcal_url)}" target="_blank" rel="noopener">Google</a>'
+        f'<a class="cta" href="{ics_href}">.ics</a>'
+        f'<span class="next">next: {html.escape(cal["next_session"])}</span>'
+        "</li>"
+    )
+
+
+def _search_text(pool):
+    courses = " ".join(c["course_title"] for c in pool["calendars"])
+    return f"{pool['name']} {pool.get('address', '')} {courses}".lower()
+
+
+def render_site(out, pools_list, generated_at_iso, total_cals):
+    # Per-pool pages
+    for pool in pools_list:
+        pool_id = pool["id"]
+        lis = "\n".join(
+            _calendar_li(c, pool_id, f"{c['slug']}.ics") for c in pool["calendars"]
+        )
+        address_line = html.escape(pool["address"]) if pool["address"] else ""
+        city_link = (
+            f'<a href="{html.escape(pool["url"])}">Official City of Toronto page for this pool</a>'
+            if pool.get("url") else ""
+        )
+        meta_desc = (
+            f"Free drop-in swim schedule at {pool['name']}"
+            + (f" ({pool['address']})" if pool["address"] else "")
+            + f". Subscribable calendar feeds for {len(pool['calendars'])} swim program(s)."
+        )
+        rendered = _render(
+            "pool.html",
+            pool_name=html.escape(pool["name"]),
+            pool_address_line=address_line,
+            canonical_url=f"{SITE_URL}/pools/{pool_id}/",
+            meta_description=html.escape(meta_desc),
+            calendars_html=lis,
+            city_link_line=city_link,
+        )
+        (out / "pools" / pool_id / "index.html").write_text(rendered, encoding="utf-8")
+
+    # Main index: SSR the whole pool list
+    sections = []
+    for pool in pools_list:
+        pool_id = pool["id"]
+        name = html.escape(pool["name"])
+        lis = "\n".join(
+            _calendar_li(c, pool_id, f"pools/{pool_id}/{c['slug']}.ics")
+            for c in pool["calendars"]
+        )
+        addr_html = f'<p class="meta">{html.escape(pool["address"])}</p>' if pool["address"] else ""
+        sections.append(
+            f'<section data-search="{html.escape(_search_text(pool), quote=True)}">'
+            f'<h2><a href="pools/{pool_id}/">{name}</a></h2>'
+            f"{addr_html}"
+            f"<ul>{lis}</ul>"
+            "</section>"
+        )
+    when = datetime.fromisoformat(generated_at_iso).astimezone().strftime("%b %d, %Y %I:%M %p")
+    summary = (
+        f"{len(pools_list)} pools · {total_cals} calendars · updated {when}"
+    )
+    index_html = _render(
+        "index.html",
+        pools_html="\n".join(sections),
+        summary_line=html.escape(summary),
+    )
+    (out / "index.html").write_text(index_html, encoding="utf-8")
+
+    # sitemap.xml
+    today = datetime.now(TZ).date().isoformat()
+    urls = [f"{SITE_URL}/"] + [f"{SITE_URL}/pools/{p['id']}/" for p in pools_list]
+    sitemap_body = "\n".join(
+        f"  <url><loc>{u}</loc><lastmod>{today}</lastmod><changefreq>daily</changefreq></url>"
+        for u in urls
+    )
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{sitemap_body}\n"
+        "</urlset>\n"
+    )
+    (out / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+
+    # robots.txt
+    (out / "robots.txt").write_text(
+        "User-agent: *\n"
+        "Allow: /\n"
+        f"Sitemap: {SITE_URL}/sitemap.xml\n",
+        encoding="utf-8",
+    )
 
 
 def sanity_check(pools_list, total_cals):

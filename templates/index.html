@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toronto Pool Calendars — Drop-In Swim Schedule for Every City Aquatic Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Subscribe to the drop-in swim schedule for any City of Toronto aquatic centre. Free calendar feeds for Lane Swim, Leisure Swim, Aquatic Fitness, and more — updated daily from the city's open data.">
+<link rel="canonical" href="https://swimcal.ca/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%8A%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Toronto Pool Calendars">
+<meta property="og:description" content="Subscribable calendar feeds for the free drop-in swim schedule at every City of Toronto aquatic centre.">
+<meta property="og:url" content="https://swimcal.ca/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Toronto Pool Calendars">
+<meta name="twitter:description" content="Subscribable calendar feeds for the free drop-in swim schedule at every City of Toronto aquatic centre.">
+</head>
+<body>
+<h1>Toronto Pool Calendars</h1>
+<p class="lede">Subscribe to the free drop-in swim schedule for any City of Toronto aquatic centre. Updated daily from the city's open data — no download, no account, no app.</p>
+<p class="lede" style="font-size: 0.9em;">Tap <strong>Subscribe</strong> on iOS/macOS to add to Apple Calendar, or <strong>Google</strong> to add to Google Calendar. The calendar keeps itself up to date as the city publishes new sessions.</p>
+<input id="filter" type="search" placeholder="Filter by pool name, address, or course…" aria-label="Filter calendars" autocomplete="off">
+<p class="meta"><!-- {{summary_line}} --></p>
+<p id="no-matches" hidden>No pools match your filter.</p>
+<div id="pools">
+<!-- {{pools_html}} -->
+</div>
+<footer>
+  <p>Schedule and facility data from the <a href="https://open.toronto.ca/">City of Toronto Open Data Portal</a>, used under the <a href="https://open.toronto.ca/about/frequently-asked-questions/">Open Government Licence – Toronto</a>. This site is not affiliated with the City of Toronto.</p>
+  <p>Schedules can change at short notice for closures, holidays, and maintenance. Always confirm with the official <a href="https://www.toronto.ca/explore-enjoy/parks-recreation/program-activities/swim-water-activities/swimming-water-play/">City swimming page</a> before heading out.</p>
+  <p><a href="https://github.com/ttarabula/toronto-pool-calendars">Source on GitHub</a></p>
+</footer>
+<script>
+(() => {
+  const filterInput = document.getElementById('filter');
+  const noMatches = document.getElementById('no-matches');
+  const container = document.getElementById('pools');
+  filterInput.addEventListener('input', () => {
+    const q = filterInput.value.trim().toLowerCase();
+    let visible = 0;
+    for (const section of container.querySelectorAll('section')) {
+      const match = !q || (section.dataset.search || '').includes(q);
+      section.hidden = !match;
+      if (match) visible++;
+    }
+    noMatches.hidden = visible > 0;
+  });
+})();
+</script>
+</body>
+</html>

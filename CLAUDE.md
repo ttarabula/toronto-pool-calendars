@@ -12,7 +12,11 @@ Generates a static site of subscribable ICS calendars — one per (Toronto aquat
 python3 build_calendars.py --output-dir public
 ```
 
-Python 3.9+ standard library only (uses `zoneinfo`). Writes `public/pools/<location_id>/<course-slug>.ics` and `public/pools.json`. The hand-written `public/index.html` reads the manifest at runtime and renders subscribe links — so a local preview is just `python3 -m http.server --directory public` then `http://localhost:8000`.
+Python 3.9+ standard library only (uses `zoneinfo`). Everything under `public/` except `CNAME` and `style.css` is generated: `index.html`, `pools/<id>/index.html` per-pool pages, `pools/<id>/<slug>.ics` feeds, `pools.json`, `sitemap.xml`, `robots.txt`. Local preview: `python3 -m http.server --directory public` then `http://localhost:8000`.
+
+### Templates
+
+`templates/index.html` and `templates/pool.html` are checked in. Placeholders use HTML-comment syntax — e.g. `<!-- {{pools_html}} -->` — so they don't collide with CSS `{}` or template engines. `build_calendars.py`'s `_render()` does plain string substitution; if you add a placeholder, make sure the exact string matches. The index page lists all pools (SSR'd so crawlers see the content in HTML); per-pool pages are standalone landing pages for SEO and shareable deep-links.
 
 ## Deployment
 
