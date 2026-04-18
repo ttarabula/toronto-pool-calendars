@@ -276,6 +276,14 @@ def _search_text(pool):
     return f"{pool['name']} {pool.get('address', '')} {courses}".lower()
 
 
+def _address_html(address, pool_name=""):
+    if not address:
+        return ""
+    query = urllib.parse.quote(f"{pool_name}, {address}, Toronto" if pool_name else address)
+    href = f"https://www.google.com/maps/search/?api=1&query={query}"
+    return f'<a href="{href}" target="_blank" rel="noopener">{html.escape(address)}</a>'
+
+
 def render_site(out, pools_list, generated_at_iso, total_cals):
     # Per-pool pages
     for pool in pools_list:
@@ -283,7 +291,7 @@ def render_site(out, pools_list, generated_at_iso, total_cals):
         lis = "\n".join(
             _calendar_li(c, pool_id, f"{c['slug']}.ics") for c in pool["calendars"]
         )
-        address_line = html.escape(pool["address"]) if pool["address"] else ""
+        address_line = _address_html(pool["address"], pool["name"])
         city_link = (
             f'<a href="{html.escape(pool["url"])}">Official City of Toronto page for this pool</a>'
             if pool.get("url") else ""
@@ -313,7 +321,8 @@ def render_site(out, pools_list, generated_at_iso, total_cals):
             _calendar_li(c, pool_id, f"pools/{pool_id}/{c['slug']}.ics")
             for c in pool["calendars"]
         )
-        addr_html = f'<p class="meta">{html.escape(pool["address"])}</p>' if pool["address"] else ""
+        addr_inner = _address_html(pool["address"], pool["name"])
+        addr_html = f'<p class="meta">{addr_inner}</p>' if addr_inner else ""
         sections.append(
             f'<section data-search="{html.escape(_search_text(pool), quote=True)}">'
             f'<h2><a href="pools/{pool_id}/">{name}</a></h2>'
