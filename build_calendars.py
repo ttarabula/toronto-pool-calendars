@@ -187,6 +187,7 @@ def main():
         loc_url = fac.get("URL", "") if fac else ""
         if loc_url == "None":
             loc_url = ""
+        loc_coords = _parse_coords(fac.get("geometry", "")) if fac else None
 
         slug = slugify(course)
         pool_dir = out / "pools" / loc_id
@@ -208,6 +209,7 @@ def main():
             "name": loc_name,
             "address": loc_addr,
             "url": loc_url,
+            "coords": loc_coords,
             "calendars": [],
         })
         pool["calendars"].append({
@@ -276,10 +278,34 @@ def _search_text(pool):
     return f"{pool['name']} {pool.get('address', '')} {courses}".lower()
 
 
-def _address_html(address, pool_name=""):
+def _parse_coords(geometry_str):
+    """Pull (lat, lng) from a facilities-CSV GeoJSON geometry cell."""
+    if not geometry_str or geometry_str == "None":
+        return None
+    try:
+        geo = json.loads(geometry_str)
+    except json.JSONDecodeError:
+        return None
+    coords = geo.get("coordinates") or []
+    if geo.get("type") == "MultiPoint" and coords:
+        lng, lat = coords[0]
+    elif geo.get("type") == "Point" and len(coords) == 2:
+        lng, lat = coords
+    else:
+        return None
+    return [lat, lng]
+
+
+def _address_html(address, pool_name="", coords=None):
     if not address:
         return ""
-    query = urllib.parse.quote(f"{pool_name}, {address}, Toronto" if pool_name else address)
+    if coords:
+        lat, lng = coords
+        query = f"{lat},{lng}"
+    else:
+        query = urllib.parse.quote(
+            f"{pool_name}, {address}, Toronto" if pool_name else address
+        )
     href = f"https://www.google.com/maps/search/?api=1&query={query}"
     return f'<a href="{href}" target="_blank" rel="noopener">{html.escape(address)}</a>'
 
@@ -291,7 +317,7 @@ def render_site(out, pools_list, generated_at_iso, total_cals):
         lis = "\n".join(
             _calendar_li(c, pool_id, f"{c['slug']}.ics") for c in pool["calendars"]
         )
-        address_line = _address_html(pool["address"], pool["name"])
+        address_line = _address_html(pool["address"], pool["name"], pool.get("coords"))
         city_link = (
             f'<a href="{html.escape(pool["url"])}">Official City of Toronto page for this pool</a>'
             if pool.get("url") else ""
@@ -321,7 +347,7 @@ def render_site(out, pools_list, generated_at_iso, total_cals):
             _calendar_li(c, pool_id, f"pools/{pool_id}/{c['slug']}.ics")
             for c in pool["calendars"]
         )
-        addr_inner = _address_html(pool["address"], pool["name"])
+        addr_inner = _address_html(pool["address"], pool["name"], pool.get("coords"))
         addr_html = f'<p class="meta">{addr_inner}</p>' if addr_inner else ""
         sections.append(
             f'<section data-search="{html.escape(_search_text(pool), quote=True)}">'
