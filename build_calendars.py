@@ -234,6 +234,33 @@ def main():
         file=sys.stderr,
     )
 
+    sanity_check(pools_list, total_cals)
+
+
+def sanity_check(pools_list, total_cals):
+    """Fail the build if output shape suggests upstream data broke.
+
+    Thresholds are deliberately loose — seasonal lows can shrink total
+    session counts substantially — but structural collapse (empty CSV,
+    renamed columns, broken facilities join) drops counts far below these.
+    """
+    problems = []
+    if len(pools_list) < 30:
+        problems.append(f"only {len(pools_list)} pools (expected >= 30)")
+    if total_cals < 100:
+        problems.append(f"only {total_cals} calendars (expected >= 100)")
+    fallbacks = sum(1 for p in pools_list if p["name"].startswith("Location "))
+    if fallbacks > 5:
+        problems.append(
+            f"{fallbacks} pools fell back to placeholder names — "
+            f"facilities join may be broken"
+        )
+    if problems:
+        print("Sanity check failed:", file=sys.stderr)
+        for p in problems:
+            print(f"  - {p}", file=sys.stderr)
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
