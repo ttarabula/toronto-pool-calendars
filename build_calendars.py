@@ -267,7 +267,7 @@ def _calendar_li(cal, pool_id, ics_href):
         f'<span class="count">{cal["session_count"]} upcoming</span>'
         f'<a class="cta" href="{html.escape(webcal_url)}">Subscribe</a>'
         f'<a class="cta" href="{html.escape(gcal_url)}" target="_blank" rel="noopener">Google</a>'
-        f'<a class="cta" href="{ics_href}">.ics</a>'
+        f'<a class="cta" href="{ics_href}">Download</a>'
         f'<span class="next">next: {html.escape(cal["next_session"])}</span>'
         "</li>"
     )
