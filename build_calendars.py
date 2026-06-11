@@ -8,6 +8,8 @@ import io
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import uuid
@@ -56,9 +58,15 @@ VTIMEZONE = [
 ]
 
 
-def fetch_csv(url):
-    with urllib.request.urlopen(url) as r:
-        return list(csv.DictReader(io.StringIO(r.read().decode("utf-8-sig"))))
+def fetch_csv(url, attempts=3):
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(url, timeout=30) as r:
+                return list(csv.DictReader(io.StringIO(r.read().decode("utf-8-sig"))))
+        except (urllib.error.URLError, TimeoutError):
+            if i == attempts - 1:
+                raise
+            time.sleep(2 ** i)
 
 
 def is_swim_course(title):
