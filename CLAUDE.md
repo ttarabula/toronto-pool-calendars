@@ -14,6 +14,10 @@ python3 build_calendars.py --output-dir public
 
 Python 3.9+ standard library only (uses `zoneinfo`). Everything under `public/` except `CNAME` and `style.css` is generated: `index.html`, `pools/<id>/index.html` per-pool pages, `pools/<id>/<slug>.ics` feeds, `pools.json`, `sitemap.xml`, `robots.txt`. Local preview: `python3 -m http.server --directory public` then `http://localhost:8000`.
 
+There's no test suite — verify changes by running the build and inspecting the output (counts on stderr, generated files, the local preview). The build is the only check.
+
+At the end of every run, `sanity_check()` calls `sys.exit(1)` if the output shape looks structurally broken: fewer than 30 pools, fewer than 100 calendars, or more than 5 pools that fell back to `Location <id>` placeholder names (a sign the facilities join broke). A build that fails with "Sanity check failed" is hitting this guardrail intentionally — thresholds are loose enough to absorb seasonal lows, so a failure usually means an upstream CSV changed shape, not that you should lower the threshold.
+
 ### Templates
 
 `templates/index.html` and `templates/pool.html` are checked in. Placeholders use HTML-comment syntax — e.g. `<!-- {{pools_html}} -->` — so they don't collide with CSS `{}` or template engines. `build_calendars.py`'s `_render()` does plain string substitution; if you add a placeholder, make sure the exact string matches. The index page lists all pools (SSR'd so crawlers see the content in HTML); per-pool pages are standalone landing pages for SEO and shareable deep-links.
@@ -27,7 +31,11 @@ Python 3.9+ standard library only (uses `zoneinfo`). Everything under `public/` 
 Two Toronto Open Data CSVs, joined on Location ID:
 
 - **drop-in.csv** (`DROP_IN_CSV_URL`): session-level rows across all programs city-wide. Columns of note: `Location ID`, `Course Title`, `First Date`, `Start Hour`/`Start Minute`, `End Hour`/`End Min` (note the asymmetric name — comes from upstream, don't "fix" it), `_id` (stable session identifier).
-- **parks-and-recreation-facilities-4326.csv** (`FACILITIES_CSV_URL`): supplies `ASSET_NAME` (location name), `ADDRESS`, and the canonical Toronto.ca URL. Values arrive UPPERCASE; `prettify()` title-cases them with a `Mc` fix for Toronto's many `McConnell`/`McCormick`-style names.
+- **parks-and-recreation-facilities-4326.csv** (`FACILITIES_CSV_URL`): supplies `ASSET_NAME` (location name), `ADDRESS`, the canonical Toronto.ca `URL`, and a `geometry` cell (GeoJSON `Point`/`MultiPoint`) that `_parse_coords()` turns into `[lat, lng]` for the map links. Values arrive UPPERCASE; `prettify()` title-cases them with a `Mc` fix for Toronto's many `McConnell`/`McCormick`-style names. Several fields can arrive as the literal string `"None"` (URL, address) — treated as empty.
+
+The join key column is named differently in each CSV: `Location ID` (with a space) in drop-in.csv, `LOCATIONID` (no space) in the facilities CSV. The facilities dict is keyed on `LOCATIONID`.
+
+Map links: if coords are present they point at exact lat/lng (`?query=<lat>,<lng>`); otherwise they fall back to a text search of `"<pool name>, <address>, Toronto"`.
 
 Filters, in order: swim-related course title (`title.lower()` contains any of `swim`, `aqua`, `water`, `pool`, `dive`); date is today or later; group by `(location_id, course_title)`. This keyword-based filter intentionally replaces the old single-pool `Course Title == "Lane Swim"` exact match — variants like "Lane Swim: Older Adult" are now their own calendars rather than being excluded.
 
