@@ -16,7 +16,7 @@ Python 3.9+ standard library only (uses `zoneinfo`). Everything under `public/` 
 
 There's no test suite — verify changes by running the build and inspecting the output (counts on stderr, generated files, the local preview). The build is the only check.
 
-At the end of every run, `sanity_check()` calls `sys.exit(1)` if the output shape looks structurally broken: fewer than 30 pools, fewer than 100 calendars, or more than 5 pools that fell back to `Location <id>` placeholder names (a sign the facilities join broke). A build that fails with "Sanity check failed" is hitting this guardrail intentionally — thresholds are loose enough to absorb seasonal lows, so a failure usually means an upstream CSV changed shape, not that you should lower the threshold.
+At the end of every run, `sanity_check()` calls `sys.exit(1)` if the output shape looks structurally broken: fewer than 100 pools, fewer than 250 calendars, or more than 10 pools that fell back to `Location <id>` placeholder names (a sign the facilities join broke). A build that fails with "Sanity check failed" is hitting this guardrail intentionally — thresholds are tuned to catch structural collapse (renamed columns, broken join, empty CSV) while still absorbing seasonal lows, so a failure usually means an upstream CSV changed shape, not that you should lower the threshold.
 
 ### Templates
 
@@ -39,7 +39,7 @@ Map links: if coords are present they point at exact lat/lng (`?query=<lat>,<lng
 
 Filters, in order: swim-related course title (`title.lower()` contains any of `swim`, `aqua`, `water`, `pool`, `dive`); date is today or later; group by `(location_id, course_title)`. This keyword-based filter intentionally replaces the old single-pool `Course Title == "Lane Swim"` exact match — variants like "Lane Swim: Older Adult" are now their own calendars rather than being excluded.
 
-Not every location in drop-in.csv is present in the facilities CSV (currently 1 of 49 swim locations is missing). The script falls back to `Location <id>` with no address when the join fails — don't hard-require facility data.
+Not every location in drop-in.csv is present in the facilities CSV (a handful drop through on any given day). The script falls back to `Location <id>` with no address when the join fails — don't hard-require facility data.
 
 ## ICS details
 
