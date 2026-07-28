@@ -390,10 +390,13 @@ def render_site(out, pools_list, generated_at_iso, total_cals):
     )
     (out / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
-    # robots.txt
+    # robots.txt — .ics feeds are for calendar apps, not search results.
+    # Keeping them out of the index avoids Search Console 404 churn as the
+    # city rotates individual course titles in and out of the schedule.
     (out / "robots.txt").write_text(
         "User-agent: *\n"
         "Allow: /\n"
+        "Disallow: /*.ics$\n"
         f"Sitemap: {SITE_URL}/sitemap.xml\n",
         encoding="utf-8",
     )
