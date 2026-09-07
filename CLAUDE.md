@@ -16,7 +16,7 @@ Python 3.9+ standard library only (uses `zoneinfo`). Everything under `public/` 
 
 There's no test suite — verify changes by running the build and inspecting the output (counts on stderr, generated files, the local preview). The build is the only check.
 
-At the end of every run, `sanity_check()` calls `sys.exit(1)` if the output shape looks structurally broken: fewer than 100 pools, fewer than 250 calendars, or more than 10 pools that fell back to `Location <id>` placeholder names (a sign the facilities join broke). A build that fails with "Sanity check failed" is hitting this guardrail intentionally — thresholds are tuned to catch structural collapse (renamed columns, broken join, empty CSV) while still absorbing seasonal lows, so a failure usually means an upstream CSV changed shape, not that you should lower the threshold.
+At the end of every run, `sanity_check()` calls `sys.exit(1)` if the output shape looks structurally broken: fewer than 40 pools, fewer than 150 calendars, or more than 10 pools that fell back to `Location <id>` placeholder names (a sign the facilities join broke). A build that fails with "Sanity check failed" is hitting this guardrail intentionally — thresholds are tuned to catch structural collapse (renamed columns, broken join, empty CSV) while still absorbing seasonal lows. The annual low is Labour Day, when Toronto's outdoor pools close en masse (in 2026 that dropped the fleet from 184 → 58 pools overnight), so floors have to sit well under indoor-only counts.
 
 ### Templates
 

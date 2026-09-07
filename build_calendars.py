@@ -410,10 +410,10 @@ def sanity_check(pools_list, total_cals):
     renamed columns, broken facilities join) drops counts far below these.
     """
     problems = []
-    if len(pools_list) < 100:
-        problems.append(f"only {len(pools_list)} pools (expected >= 100)")
-    if total_cals < 250:
-        problems.append(f"only {total_cals} calendars (expected >= 250)")
+    if len(pools_list) < 40:
+        problems.append(f"only {len(pools_list)} pools (expected >= 40)")
+    if total_cals < 150:
+        problems.append(f"only {total_cals} calendars (expected >= 150)")
     fallbacks = sum(1 for p in pools_list if p["name"].startswith("Location "))
     if fallbacks > 10:
         problems.append(
